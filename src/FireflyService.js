@@ -16,6 +16,8 @@ export default class FireflyService {
     async getCategories() {
         const response = await fetch(`${this.#BASE_URL}/api/v1/categories`, {
             headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/vnd.api+json",
                 Authorization: `Bearer ${this.#PERSONAL_TOKEN}`,
             }
         });

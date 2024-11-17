@@ -38,9 +38,9 @@ export default class App {
         });
 
         this.#queue.addEventListener('start', job => console.log('Job started', job))
-        this.#queue.addEventListener('success', event => console.log('Job success', event.job))
-        this.#queue.addEventListener('error', event => console.error('Job error', event.job, event.err, event))
-        this.#queue.addEventListener('timeout', event => console.log('Job timeout', event.job))
+        this.#queue.addEventListener('success', job => console.log('Job success', job))
+        this.#queue.addEventListener('error', job => console.error('Job error', job))
+        this.#queue.addEventListener('timeout', job => console.log('Job timeout', job))
 
         this.#express = express();
         this.#server = http.createServer(this.#express)
